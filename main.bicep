@@ -13,18 +13,18 @@ param appServicePlanName1 string = 'manuelsanroman-assignment-prod'
 @sys.description('The Web App name.')
 @minLength(3)
 @maxLength(30)
-param appServiceAppName2 string = 'manuelsanroman-assignment-dev-be'
+param appServiceAppName2 string = 'msanroman-assignment-dev-be'
 @minLength(3)
 @maxLength(30)
-param appServiceAppName4 string = 'manuelsanroman-assignment-dev-fe'
+param appServiceAppName4 string = 'msanroman-assignment-dev-fe'
 @sys.description('The App Service Plan name.')
 @minLength(3)
 @maxLength(30)
-param appServicePlanName2 string = 'manuelsanroman-assignment-dev'
+param appServicePlanName2 string = 'msanroman-assignment-dev'
 @sys.description('The Storage Account name.')
 @minLength(3)
 @maxLength(30)
-param storageAccountName string = 'manuelsanroman-assignment-storage'
+param storageAccountName string = 'msanroman-assignment-storage'
 @allowed([
   'nonprod'
   'prod'

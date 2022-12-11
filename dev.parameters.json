@@ -3,16 +3,16 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "appServiceAppName2": {
-            "value": "msanroman-assignment-dev-be"
+            "value": "msanroman-app-dev-be"
         },
         "appServiceAppName4": {
-            "value": "msanroman-assignment-dev-fe"
+            "value": "msanroman-app-dev-fe"
         },
         "appServicePlanName2": {
-            "value": "msanroman-assignment-dev"
+            "value": "msanroman-app-dev"
         },
         "storageAccountName": {
-            "value": "msanroman-assignment-dev-storage"
+            "value": "msanromandevstorage"
         },
         "environmentType": {
             "value": "nonprod"

@@ -1,30 +1,30 @@
 @sys.description('The Web App name.')
 @minLength(3)
 @maxLength(30)
-param appServiceAppName1 string = 'manuelsanroman-assignment-prod-be'
+param appServiceAppName1 string = 'msanroman-app-prod-be'
 @sys.description('The Web App name.')
 @minLength(3)
 @maxLength(30)
-param appServiceAppName3 string = 'manuelsanroman-assignment-prod-fe'
+param appServiceAppName3 string = 'msanroman-app-prod-fe'
 @sys.description('The App Service Plan name.')
 @minLength(3)
 @maxLength(30)
-param appServicePlanName1 string = 'manuelsanroman-assignment-prod'
+param appServicePlanName1 string = 'msanroman-app-prod'
 @sys.description('The Web App name.')
 @minLength(3)
 @maxLength(30)
-param appServiceAppName2 string = 'msanroman-assignment-dev-be'
+param appServiceAppName2 string = 'msanroman-app-dev-be'
 @minLength(3)
 @maxLength(30)
-param appServiceAppName4 string = 'msanroman-assignment-dev-fe'
+param appServiceAppName4 string = 'msanroman-app-dev-fe'
 @sys.description('The App Service Plan name.')
 @minLength(3)
 @maxLength(30)
-param appServicePlanName2 string = 'msanroman-assignment-dev'
+param appServicePlanName2 string = 'msanroman-app-dev'
 @sys.description('The Storage Account name.')
 @minLength(3)
 @maxLength(30)
-param storageAccountName string = 'msanroman-assignment-storage'
+param storageAccountName string = 'msanromanstorage'
 @allowed([
   'nonprod'
   'prod'

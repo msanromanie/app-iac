@@ -12,7 +12,7 @@
             "value": "msroman-assignment-dev"
         },
         "storageAccountName": {
-            "value": "mromandevstorage"
+            "value": "msromandevstorage"
         },
         "environmentType": {
             "value": "nonprod"

@@ -90,7 +90,7 @@ module appService2 'modules/appStuff.bicep' = if (environmentType == 'nonprod') 
     location: location
     appServiceAppName: appServiceAppName2
     appServicePlanName: appServicePlanName2
-    runtimeStack: runtimestack_fe
+    runtimeStack: 'python|3.10'
     dbhost: dbhost
     dbuser: dbuser
     dbpass: dbpass

@@ -40,7 +40,7 @@ param dbpass string
 @secure()
 param dbname string
 
-param runtimestack_fe string = 'python|3.10'
+param runtimestack_be string = 'python|3.10'
 
 var storageAccountSkuName = (environmentType == 'prod') ? 'Standard_GRS' : 'Standard_LRS'  
 
@@ -62,7 +62,7 @@ module appService1 'modules/appStuff.bicep' = if (environmentType == 'prod') {
     location: location
     appServiceAppName: appServiceAppName1
     appServicePlanName: appServicePlanName1
-    runtimeStack: runtimestack_fe
+    runtimeStack: runtimestack_be
     dbhost: dbhost
     dbuser: dbuser
     dbpass: dbpass
@@ -76,7 +76,7 @@ module appService3 'modules/appStuff.bicep' = if (environmentType == 'prod') {
     location: location
     appServiceAppName: appServiceAppName3
     appServicePlanName: appServicePlanName1
-    runtimeStack: runtimestack_fe
+    runtimeStack: runtimestack_be
     dbhost: dbhost
     dbuser: dbuser
     dbpass: dbpass
@@ -90,7 +90,7 @@ module appService2 'modules/appStuff.bicep' = if (environmentType == 'nonprod') 
     location: location
     appServiceAppName: appServiceAppName2
     appServicePlanName: appServicePlanName2
-    runtimeStack: 'python|3.10'
+    runtimeStack: runtimestack_be
     dbhost: dbhost
     dbuser: dbuser
     dbpass: dbpass
@@ -104,7 +104,7 @@ module appService4 'modules/appStuff.bicep' = if (environmentType == 'nonprod') 
     location: location
     appServiceAppName: appServiceAppName4
     appServicePlanName: appServicePlanName2
-    runtimeStack: runtimestack_fe
+    runtimeStack: runtimestack_be
     dbhost: dbhost
     dbuser: dbuser
     dbpass: dbpass

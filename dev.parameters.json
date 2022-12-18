@@ -11,9 +11,6 @@
         "appServicePlanName2": {
             "value": "msroman-assignment-dev"
         },
-        "storageAccountName": {
-            "value": "msromandevstorage"
-        },
         "environmentType": {
             "value": "nonprod"
         }

@@ -11,9 +11,6 @@
         "appServicePlanName1": {
             "value": "msroman-assignment-prod"
         },
-        "storageAccountName": {
-            "value": "msromanprodstorage"
-        },
         "environmentType": {
             "value": "prod"
         }

@@ -21,10 +21,6 @@ param appServiceAppName4 string = 'msanroman-assignment-dev-fe'
 @minLength(3)
 @maxLength(30)
 param appServicePlanName2 string = 'msanroman-assignment-dev'
-@sys.description('The Storage Account name.')
-@minLength(3)
-@maxLength(30)
-param storageAccountName string = 'msromanstorage'
 @allowed([
   'nonprod'
   'prod'
@@ -41,20 +37,9 @@ param dbpass string
 param dbname string
 
 param runtimestack_be string = 'python|3.10'
+param runtimestack_fe string = 'Node|14-lts'
+param startup_command string = 'pm2 serve /home/site/wwwroot/dist --no-daemon --spa'
 
-var storageAccountSkuName = (environmentType == 'prod') ? 'Standard_GRS' : 'Standard_LRS'  
-
-resource storageAccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
-    name: storageAccountName
-    location: location
-    sku: {
-      name: storageAccountSkuName
-    }
-    kind: 'StorageV2'
-    properties: {
-      accessTier: 'Hot'
-    }
-  }
 
 module appService1 'modules/appStuff.bicep' = if (environmentType == 'prod') {
   name: 'appService1'
@@ -70,17 +55,14 @@ module appService1 'modules/appStuff.bicep' = if (environmentType == 'prod') {
   }
 }
 
-module appService3 'modules/appStuff.bicep' = if (environmentType == 'prod') {
+module appService3 'modules/appStuffFE.bicep' = if (environmentType == 'prod') {
   name: 'appService3'
   params: { 
     location: location
     appServiceAppName: appServiceAppName3
     appServicePlanName: appServicePlanName1
-    runtimeStack: runtimestack_be
-    dbhost: dbhost
-    dbuser: dbuser
-    dbpass: dbpass
-    dbname: dbname
+    runtimeStack: runtimestack_fe
+    startupCommand: startup_command
   }
 }
 
@@ -98,17 +80,14 @@ module appService2 'modules/appStuff.bicep' = if (environmentType == 'nonprod') 
   }
 }
 
-module appService4 'modules/appStuff.bicep' = if (environmentType == 'nonprod') {
+module appService4 'modules/appStuffFE.bicep' = if (environmentType == 'nonprod') {
   name: 'appService4'
   params: { 
     location: location
     appServiceAppName: appServiceAppName4
     appServicePlanName: appServicePlanName2
-    runtimeStack: runtimestack_be
-    dbhost: dbhost
-    dbuser: dbuser
-    dbpass: dbpass
-    dbname: dbname
+    runtimeStack: runtimestack_fe
+    startupCommand: startup_command
   }
 }
 

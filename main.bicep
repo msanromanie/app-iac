@@ -63,6 +63,10 @@ module appService3 'modules/appStuffFE.bicep' = if (environmentType == 'prod') {
     appServicePlanName: appServicePlanName1
     runtimeStack: runtimestack_fe
     startupCommand: startup_command
+    dbhost: dbhost
+    dbuser: dbuser
+    dbpass: dbpass
+    dbname: dbname
   }
 }
 
@@ -88,6 +92,10 @@ module appService4 'modules/appStuffFE.bicep' = if (environmentType == 'nonprod'
     appServicePlanName: appServicePlanName2
     runtimeStack: runtimestack_fe
     startupCommand: startup_command
+    dbhost: dbhost
+    dbuser: dbuser
+    dbpass: dbpass
+    dbname: dbname
   }
 }
 

@@ -3,13 +3,13 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "appServiceAppName1": {
-            "value": "msroman-assignment-prod-be"
+            "value": "app-prod-be"
         },
         "appServiceAppName3": {
-            "value": "msroman-assignment-prod-fe"
+            "value": "app-prod-fe"
         },
         "appServicePlanName1": {
-            "value": "msroman-assignment-prod"
+            "value": "app-prod"
         },
         "environmentType": {
             "value": "prod"
